@@ -1,7 +1,7 @@
 
 export const authMethods = {
     checkLog: () => {
-        const token = localStorage.getItem("id_token");
+        const token = localStorage.getItem("access_token");
         if (token){
             return true;
         }else{
@@ -10,14 +10,14 @@ export const authMethods = {
         }
     },
     logout: () => {
-        localStorage.removeItem("id_token");
+        localStorage.removeItem("access_token");
     },
     login: (token) => {
-        localStorage.setItem("id_token", token);
+        localStorage.setItem("access_token", token);
     },
     getToken: () => {
         // Retrieves the user token from localStorage
-        return localStorage.getItem("id_token");
+        return localStorage.getItem("access_token");
     }
 };
 
